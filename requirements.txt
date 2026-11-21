@@ -1,0 +1,8 @@
+gradio[oauth]
+requests
+pandas
+smolagents
+huggingface_hub
+google-genai
+ddgs
+beautifulsoup4
