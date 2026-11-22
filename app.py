@@ -1,10 +1,15 @@
 import os
+import spaces
 import gradio as gr
 import requests
 import pandas as pd
 import ast
 import operator
 import time
+
+@spaces.GPU
+def zerogpu_compatibility():
+    return "ZeroGPU compatibility ready."
 
 from google import genai
 from google.genai import types
@@ -747,6 +752,8 @@ def run_and_submit_all(
 # --------------------------------------------------
 
 with gr.Blocks() as demo:
+
+    gr.Button(visible=False).click(fn=zerogpu_compatibility)
 
     gr.Markdown(
         "# Gala AI Agent"
